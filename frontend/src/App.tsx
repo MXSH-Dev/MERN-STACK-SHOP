@@ -1,22 +1,24 @@
 import React from "react";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="py-3">
+          <Container>
+            <Route path="/" component={HomeScreen} exact={true} />
+            <Route path="/product/:id" component={ProductScreen} />
+          </Container>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
