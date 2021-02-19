@@ -9,4 +9,5 @@ export default interface ProductDetail {
   countInStock: number;
   rating: number;
   numReviews: number;
+  reviews: any[];
 }
