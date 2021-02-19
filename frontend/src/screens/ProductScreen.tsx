@@ -14,10 +14,22 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import ProductDetail from "../interfaces/ProductDetail";
 
-const ProductScreen: React.FC<RouteComponentProps<any>> = ({ match }) => {
+interface Hello {
+  hi?: string;
+}
+
+const ProductScreen: React.FC<Hello & RouteComponentProps<any>> = ({
+  match,
+  hi,
+}) => {
   // const [product, setProduct] = useState<ProductDetail | undefined>(
   //   {} as ProductDetail
   // );
+
+  // console.log(props);
+  if (hi) {
+    console.log(hi);
+  }
 
   const dispatch = useDispatch();
 
