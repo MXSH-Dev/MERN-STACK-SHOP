@@ -1,9 +1,11 @@
 import {
   ProductListActionType,
   ProductDetailActionType,
+  CartActionType,
 } from "../action-types";
 
 import ProductDetail from "../../interfaces/ProductDetail";
+import CartItem from "../../interfaces/CartItem";
 
 interface ProductListRequestAction {
   type: ProductListActionType.PRODUCT_LIST_REQUEST;
@@ -42,3 +44,10 @@ export type ProductDetailAction =
   | ProductDetailRequestAction
   | ProductDetailSuccessAction
   | ProductDetailErrorAction;
+
+interface CartAddAction {
+  type: CartActionType.CART_ADD_ITEM;
+  payload: CartItem;
+}
+
+export type CartAction = CartAddAction;

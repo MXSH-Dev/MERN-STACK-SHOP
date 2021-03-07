@@ -9,3 +9,8 @@ export enum ProductDetailActionType {
   PRODUCT_DETAIL_SUCCESS = "PRODUCT_DETAIL_SUCCESS",
   PRODUCT_DETAIL_ERROR = "PRODUCT_DETAIL_ERROR",
 }
+
+export enum CartActionType {
+  CART_ADD_ITEM = "CART_ADD_ITEM",
+  CART_REMOVE_ITEM = "CART_REMOVE_ITEM",
+}
