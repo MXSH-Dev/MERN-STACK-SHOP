@@ -80,3 +80,59 @@ export type UserLoginAction =
   | UserLoginSuccessAction
   | UserLoginFailAction
   | UserLogoutAction;
+
+interface UserRegisterRequestAction {
+  type: AuthActionType.USER_REGISTER_REQUEST;
+}
+interface UserRegisterSuccessAction {
+  type: AuthActionType.USER_REGISTER_SUCCESS;
+  payload: UserInformation;
+}
+interface UserRegisterFailAction {
+  type: AuthActionType.USER_REGISTER_FAIL;
+  payload: string;
+}
+
+export type UserRegisterAction =
+  | UserRegisterRequestAction
+  | UserRegisterSuccessAction
+  | UserRegisterFailAction;
+
+interface UserDetailRequestAction {
+  type: AuthActionType.USER_DETAIL_REQUEST;
+}
+interface UserDetailSuccessAction {
+  type: AuthActionType.USER_DETAIL_SUCCESS;
+  payload: UserInformation;
+}
+interface UserDetailFailAction {
+  type: AuthActionType.USER_DETAIL_FAIL;
+  payload: string;
+}
+
+export type UserDetailAction =
+  | UserDetailRequestAction
+  | UserDetailSuccessAction
+  | UserDetailFailAction;
+
+interface UserUpdateRequestAction {
+  type: AuthActionType.USER_UPDATE_REQUEST;
+}
+interface UserUpdateSuccessAction {
+  type: AuthActionType.USER_UPDATE_SUCCESS;
+  payload: UserInformation;
+}
+interface UserUpdateFailAction {
+  type: AuthActionType.USER_UPDATE_FAIL;
+  payload: string;
+}
+interface UserUpdateResetAction {
+  type: AuthActionType.USER_UPDATE_RESET;
+  payload: string;
+}
+
+export type UserUpdateAction =
+  | UserUpdateRequestAction
+  | UserUpdateSuccessAction
+  | UserUpdateFailAction
+  | UserUpdateResetAction;
