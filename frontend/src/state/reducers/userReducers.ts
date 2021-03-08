@@ -21,14 +21,24 @@ export const userLoginReducer = (
 ): UserLoginState => {
   switch (action.type) {
     case AuthActionType.USER_LOGIN_REQUEST:
-      return { loading: true, userInfo: null, error: null };
+      return { ...state, loading: true, userInfo: null, error: null };
     case AuthActionType.USER_LOGIN_SUCCESS:
-      return { loading: false, userInfo: action.payload, error: null };
+      return {
+        ...state,
+        loading: false,
+        userInfo: action.payload,
+        error: null,
+      };
     case AuthActionType.USER_LOGIN_FAIL:
-      return { loading: false, userInfo: null, error: action.payload };
+      return {
+        ...state,
+        loading: false,
+        userInfo: null,
+        error: action.payload,
+      };
     case AuthActionType.USER_LOGOUT:
       return initalUserLoginState;
     default:
-      return initalUserLoginState;
+      return { ...state };
   }
 };
