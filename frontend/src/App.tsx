@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 import { RouteComponentProps } from "react-router-dom";
 
@@ -17,8 +18,10 @@ const App: React.FC = () => {
         <main className="py-3">
           <Container>
             <Switch>
-              <Route path="/" component={HomeScreen} exact={true} />
               {/* <Route path="/product/:id" component={ProductScreen} /> */}
+              <Route path="/login" exact={true}>
+                <LoginScreen></LoginScreen>
+              </Route>
               <Route
                 path="/product/:id"
                 render={(props: RouteComponentProps<any>) => (
@@ -31,6 +34,7 @@ const App: React.FC = () => {
                   <CartScreen {...props} />
                 )}
               />
+              <Route path="/" component={HomeScreen} exact={true} />
             </Switch>
           </Container>
         </main>

@@ -2,10 +2,12 @@ import {
   ProductListActionType,
   ProductDetailActionType,
   CartActionType,
+  AuthActionType,
 } from "../action-types";
 
 import ProductDetail from "../../interfaces/ProductDetail";
 import CartItem from "../../interfaces/CartItem";
+import UserInformation from "../../interfaces/userInfo";
 
 interface ProductListRequestAction {
   type: ProductListActionType.PRODUCT_LIST_REQUEST;
@@ -56,3 +58,25 @@ interface CartRemoveAction {
 }
 
 export type CartAction = CartAddAction | CartRemoveAction;
+
+interface UserLoginRequestAction {
+  type: AuthActionType.USER_LOGIN_REQUEST;
+}
+interface UserLoginSuccessAction {
+  type: AuthActionType.USER_LOGIN_SUCCESS;
+  payload: UserInformation;
+}
+interface UserLoginFailAction {
+  type: AuthActionType.USER_LOGIN_FAIL;
+  payload: string;
+}
+
+interface UserLogoutAction {
+  type: AuthActionType.USER_LOGOUT;
+}
+
+export type UserLoginAction =
+  | UserLoginRequestAction
+  | UserLoginSuccessAction
+  | UserLoginFailAction
+  | UserLogoutAction;
