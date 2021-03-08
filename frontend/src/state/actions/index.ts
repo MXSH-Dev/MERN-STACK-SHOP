@@ -50,4 +50,9 @@ interface CartAddAction {
   payload: CartItem;
 }
 
-export type CartAction = CartAddAction;
+interface CartRemoveAction {
+  type: CartActionType.CART_REMOVE_ITEM;
+  payload: string;
+}
+
+export type CartAction = CartAddAction | CartRemoveAction;

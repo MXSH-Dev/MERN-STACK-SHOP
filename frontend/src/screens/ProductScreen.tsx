@@ -40,7 +40,7 @@ const ProductScreen: React.FC<Hello & RouteComponentProps<any>> = ({
     console.log(hi);
   }
 
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
